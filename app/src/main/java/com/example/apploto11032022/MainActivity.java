@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
                 //xu ly neu 99 so thi reset ma 100 thi thoat khong lam gi het
                 if(mArrNumbers!=null)
                 {
-                    if( mArrNumbers.size()>0 && mArrNumbers.size()<100)
+                    if( mArrNumbers.size()!=0 && mArrNumbers.size()<100)
                     {
                         mArrNumbers.clear();
                     }
-                    else
+                    else if(mArrNumbers.size()==100)
                     {
                         return;
                     }
@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 mArrNumbers=creatArrNumbers();
+                mStringHistory="";
+                mTvHistory.setText("Moi ban rao!"+mStringHistory);
+                mTvResult.setText("Welcome !!!");
             }
         });
 
@@ -92,8 +95,21 @@ public class MainActivity extends AppCompatActivity {
         {
             int index=mRandom.nextInt(mArrNumbers.size());
             int value=mArrNumbers.get(index);
-
-            mStringHistory +=value+" - ";
+            // cat ky tu " - " o so cuoi cung, cach 1:
+//            if(mArrNumbers.size()==1)
+//            {
+//                mStringHistory +=value;
+//            }
+//            else
+//            {
+//                mStringHistory +=value+" - ";
+//            }
+            // cach 2:
+            mStringHistory += value + " - ";
+            if(mArrNumbers.size()==1)
+            {
+                mStringHistory=mStringHistory.substring(0,mStringHistory.length()-3);
+            }
             mTvResult.setText(value+"");
             mTvHistory.setText(mStringHistory);
             mArrNumbers.remove(index);
