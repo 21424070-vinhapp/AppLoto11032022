@@ -43,7 +43,20 @@ public class MainActivity extends AppCompatActivity {
         mBtnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mArrNumbers!=null)
+                {
+                    if( mArrNumbers.size()>0 && mArrNumbers.size()<100)
+                    {
+                        mArrNumbers.clear();
+                    }
+                    else
+                    {
+                        return;
+                    }
 
+                }
+
+                mArrNumbers=creatArrNumbers();
             }
         });
     }
