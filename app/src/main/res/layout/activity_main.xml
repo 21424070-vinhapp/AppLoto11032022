@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000">
+
+    <ImageView
+        android:alpha="0.2"
+        android:src="@drawable/backgroup"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <TextView
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:textColor="#ffff"
+            android:text="71"
+            android:id="@+id/textViewResult"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lai"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:id="@+id/buttonReset"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rao"
+                android:textAllCaps="false"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginStart="150dp"
+                android:id="@+id/buttonProgress"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:textSize="20sp"
+            android:text="Cac so da ra:"
+            android:textColor="@color/white"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewHistory"
+                android:textSize="20sp"
+                android:textColor="#ffff"
+                android:text="1 - 2 - 2 - 2 - 2 -  - 2 - 2 - 2 - 2 - 3 - 2 - 2 - 2 - 2 -  - 2 - 2 - 2 - 2 - 3"/>
+
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
